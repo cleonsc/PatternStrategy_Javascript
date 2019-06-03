@@ -7,7 +7,18 @@ const strategy1 = new Strategy1();
 const strategy2 = new Strategy2();
 
 strategyManager.strategy = strategy1;
-strategyManager.doAction();
+//strategyManager.doAction();
 
 strategyManager.strategy = strategy2;
-strategyManager.doAction();
+//strategyManager.doAction();
+
+const strategies = {
+    strategy1,
+    strategy2
+}
+
+function implementarStrategy(param){
+    strategies[param].doAction();
+}
+
+implementarStrategy(process.argv[2]);
